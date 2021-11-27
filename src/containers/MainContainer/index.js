@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import PrimeTopBar from '../../components/PrimeTopBar';
+import PrimeTopBar from '../../components/Bars/PrimeTopBar';
 
 export default function MainContainer() {
   return (

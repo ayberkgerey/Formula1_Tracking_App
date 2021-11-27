@@ -33,6 +33,13 @@ export default function DrawerContent(props) {
               }}
             />
             <DrawerItem
+              label="Schedules"
+              labelStyle={{color: 'white'}}
+              onPress={() => {
+                props.navigation.navigate('Schedules');
+              }}
+            />
+            <DrawerItem
               label="Drivers"
               labelStyle={{color: 'white'}}
               onPress={() => {
@@ -65,6 +72,13 @@ export default function DrawerContent(props) {
               labelStyle={{color: 'white'}}
               onPress={() => {
                 props.navigation.navigate('Circuits');
+              }}
+            />
+            <DrawerItem
+              label="Champions"
+              labelStyle={{color: 'white'}}
+              onPress={() => {
+                props.navigation.navigate('Champions');
               }}
             />
           </Drawer.Section>

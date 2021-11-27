@@ -8,6 +8,8 @@ import {
   DriversContainer,
   ResultsContainer,
   StandingsContainer,
+  SchedulesContainer,
+  ChampionsContainer,
 } from '../../containers';
 import DrawerContent from '../contents/DrawerContent';
 
@@ -24,10 +26,12 @@ export default function DrawerNavigation() {
         initialRouteName="Home">
         <Drawer.Screen name="Home" component={MainContainer} />
         <Drawer.Screen name="Drivers" component={DriversContainer} />
+        <Drawer.Screen name="Schedules" component={SchedulesContainer} />
         <Drawer.Screen name="Standings" component={StandingsContainer} />
         <Drawer.Screen name="Constructors" component={ConstructorsContainer} />
         <Drawer.Screen name="Results" component={ResultsContainer} />
         <Drawer.Screen name="Circuits" component={CircuitsContainer} />
+        <Drawer.Screen name="Champions" component={ChampionsContainer} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

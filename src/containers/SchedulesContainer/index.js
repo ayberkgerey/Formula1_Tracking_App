@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
 
-export default function ResultsContainer() {
+export default function SchedulesContainer() {
   return (
     <View style={styles.container}>
-      <PrimeTopBar header="Results" />
+      <PrimeTopBar header="Schedules" />
     </View>
   );
 }
