@@ -1,11 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
+import CircuitsList from '../../components/Lists/CircuitsList';
+import SchedulesList from '../../components/Lists/SchedulesList';
 
 export default function SchedulesContainer() {
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    fetch('https://ergast.com/api/f1/current.json')
+      .then(response => response.json())
+      .then(responseJson => {
+        setData(responseJson.MRData.RaceTable.Races);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+    console.log(JSON.stringify(data));
+  }, []);
+
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Schedules" />
+      <SchedulesList data={data} />
     </View>
   );
 }

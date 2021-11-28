@@ -29,7 +29,6 @@ export default function DrawerNavigation() {
         <Drawer.Screen name="Schedules" component={SchedulesContainer} />
         <Drawer.Screen name="Standings" component={StandingsContainer} />
         <Drawer.Screen name="Constructors" component={ConstructorsContainer} />
-        <Drawer.Screen name="Results" component={ResultsContainer} />
         <Drawer.Screen name="Circuits" component={CircuitsContainer} />
         <Drawer.Screen name="Champions" component={ChampionsContainer} />
       </Drawer.Navigator>

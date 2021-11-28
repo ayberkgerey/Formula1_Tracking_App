@@ -61,13 +61,6 @@ export default function DrawerContent(props) {
               }}
             />
             <DrawerItem
-              label="Results"
-              labelStyle={{color: 'white'}}
-              onPress={() => {
-                props.navigation.navigate('Results');
-              }}
-            />
-            <DrawerItem
               label="Circuits"
               labelStyle={{color: 'white'}}
               onPress={() => {
