@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import CircuitsList from '../../components/Lists/CircuitsList';
 import SchedulesList from '../../components/Lists/SchedulesList';
 
 export default function SchedulesContainer() {

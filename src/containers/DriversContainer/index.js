@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import DriverRow from '../../components/Rows/DriverRow';
 import DriversList from '../../components/Lists/DriversList';
 
 export default function DriversContainer() {

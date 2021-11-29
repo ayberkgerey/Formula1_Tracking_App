@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Drawer} from 'react-native-paper';
 
@@ -70,6 +70,11 @@ export default function DrawerContent(props) {
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>
+      <View style={styles.labelContainer}>
+        <Text style={{color: 'red', fontWeight: '700', fontSize: 10}}>
+          AYBERK GEREY
+        </Text>
+      </View>
     </View>
   );
 }
@@ -93,5 +98,9 @@ const styles = StyleSheet.create({
   },
   drawerSection: {
     marginTop: 15,
+  },
+  labelContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

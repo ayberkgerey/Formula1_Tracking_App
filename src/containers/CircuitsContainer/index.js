@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import CircuitRow from '../../components/Rows/CircuitRow';
 import CircuitsList from '../../components/Lists/CircuitsList';
 
 export default function CircuitsContainer() {

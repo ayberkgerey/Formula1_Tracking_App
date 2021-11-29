@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default function StandingRow({data}) {
+export default function TeamStandingRow({data}) {
   return (
     <View style={styles.container}>
       <View style={styles.numberContainer}>
@@ -9,9 +9,9 @@ export default function StandingRow({data}) {
       </View>
 
       <View style={styles.textContainer}>
-        <Text style={styles.title}>{data.Driver.code}</Text>
+        <Text style={styles.title}>{data.Constructor.name}</Text>
       </View>
-      <View style={styles.textContainer}>
+      <View style={styles.pointContainer}>
         <Text style={styles.title}>{data.points}</Text>
       </View>
     </View>
@@ -38,9 +38,15 @@ const styles = StyleSheet.create({
     borderRightWidth: 2,
     borderColor: 'red',
   },
+  pointContainer: {
+    height: '100%',
+    width: 55,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   textContainer: {
-    width: 100,
-    alignItems: 'flex-end',
+    width: 200,
+    alignItems: 'center',
   },
   title: {
     color: 'white',

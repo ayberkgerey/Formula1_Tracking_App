@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScrollView} from 'react-native';
 import DriverRow from '../../Rows/DriverRow';
 

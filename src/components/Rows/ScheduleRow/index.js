@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet, Linking} from 'react-native';
 
 export default function ScheduleRow({data}) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => Linking.openURL(data.url)}>
       <View style={styles.numberContainer}>
         <Text style={styles.title}>{data.round}</Text>
       </View>

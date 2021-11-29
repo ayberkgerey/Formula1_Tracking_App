@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet, Linking} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 export default function ConstructorRow({data}) {
@@ -8,9 +8,7 @@ export default function ConstructorRow({data}) {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => {
-        navigation.navigate('WebView');
-      }}>
+      onPress={() => Linking.openURL(data.url)}>
       <View style={styles.nameContainer}>
         <Text style={styles.title}>{data.name}</Text>
       </View>
