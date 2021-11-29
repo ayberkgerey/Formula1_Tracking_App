@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {Title, Caption, Drawer} from 'react-native-paper';
+import {Drawer} from 'react-native-paper';
 
 export default function DrawerContent(props) {
   return (
@@ -65,13 +65,6 @@ export default function DrawerContent(props) {
               labelStyle={{color: 'white'}}
               onPress={() => {
                 props.navigation.navigate('Circuits');
-              }}
-            />
-            <DrawerItem
-              label="Champions"
-              labelStyle={{color: 'white'}}
-              onPress={() => {
-                props.navigation.navigate('Champions');
               }}
             />
           </Drawer.Section>

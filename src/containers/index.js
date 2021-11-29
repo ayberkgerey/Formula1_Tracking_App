@@ -4,7 +4,6 @@ import ConstructorsContainer from './ConstructorsContainer';
 import DriversContainer from './DriversContainer';
 import StandingsContainer from './StandingsContainer';
 import SchedulesContainer from './SchedulesContainer';
-import ChampionsContainer from './ChampionsContainer';
 
 export {
   MainContainer,
@@ -13,5 +12,4 @@ export {
   DriversContainer,
   StandingsContainer,
   SchedulesContainer,
-  ChampionsContainer,
 };

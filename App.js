@@ -1,6 +1,11 @@
 import React from 'react';
-import DrawerNavigation from './src/navigations/DrawerNavigation';
+import {NavigationContainer} from '@react-navigation/native';
+import StackNavigation from './src/navigations/StackNavigation';
 
 export default function App() {
-  return <DrawerNavigation />;
+  return (
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+  );
 }
