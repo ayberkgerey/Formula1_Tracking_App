@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import DriversList from '../../components/Lists/DriversList';
+import DriverRow from '../../components/Rows/DriverRow';
 
 export default function DriversContainer() {
   const [data, setData] = useState([]);
@@ -25,7 +25,11 @@ export default function DriversContainer() {
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Drivers" />
-      <DriversList data={data} />
+      <FlatList
+        style={{marginTop: 20, marginBottom: 30}}
+        data={data}
+        renderItem={({item}) => <DriverRow data={item} />}
+      />
     </View>
   );
 }

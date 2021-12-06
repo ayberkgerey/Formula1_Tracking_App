@@ -8,21 +8,16 @@ import {
   Linking,
 } from 'react-native';
 
-export default function LiveCard(props) {
+export default function HomeCard(props) {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() =>
-        Linking.openURL('https://tv.vodafone.com.tr/canli-tv-izle/ssport-2/120')
-      }>
+      onPress={() => Linking.openURL(props.link)}>
       <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={require('../../../assets/liveCardPic.png')}
-        />
+        <Image style={styles.image} source={props.imagePath} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.cardText}>Watch Live</Text>
+        <Text style={styles.cardText}>{props.title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -30,21 +25,20 @@ export default function LiveCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 15,
-    width: '93%',
+    width: '100%',
     backgroundColor: 'black',
     borderBottomLeftRadius: 15,
     borderTopRightRadius: 15,
+    marginTop: 15,
   },
   imageContainer: {
+    borderTopRightRadius: 15,
     padding: 1,
     width: '100%',
     height: 200,
-    borderTopRightRadius: 15,
   },
   image: {
     borderTopRightRadius: 15,
-
     flex: 1,
     width: undefined,
     height: undefined,

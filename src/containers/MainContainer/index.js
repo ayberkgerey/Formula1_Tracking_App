@@ -1,9 +1,7 @@
 import React from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import NewsCard from '../../components/Cards/NewsCard';
-import LiveCard from '../../components/Cards/LiveCard';
-import VoteCard from '../../components/Cards/VoteCard';
+import HomeCard from '../../components/Cards/HomeCard';
 
 export default function MainContainer() {
   return (
@@ -11,9 +9,21 @@ export default function MainContainer() {
       <PrimeTopBar header="Home" />
       <ScrollView>
         <View style={styles.cardContainer}>
-          <NewsCard />
-          <LiveCard />
-          <VoteCard />
+          <HomeCard
+            title={'Formula News'}
+            link={'https://www.formula1.com/en/latest/all.html'}
+            imagePath={require('../../assets/newsCardPic.jpg')}
+          />
+          <HomeCard
+            title={'Watch Live'}
+            link={'https://tv.vodafone.com.tr/canli-tv-izle/ssport-2/120'}
+            imagePath={require('../../assets/liveCardPic.png')}
+          />
+          <HomeCard
+            title={'Vote For Driver Of The Day'}
+            link={'https://www.formula1.com/en/vote.html'}
+            imagePath={require('../../assets/kimi.jpg')}
+          />
         </View>
       </ScrollView>
     </View>
@@ -26,8 +36,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(22,21,30)',
   },
   cardContainer: {
-    marginTop: 10,
+    width: '93%',
     marginBottom: 20,
-    alignItems: 'center',
+    alignSelf: 'center',
   },
 });

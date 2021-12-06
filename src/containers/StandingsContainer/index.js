@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
 import StandingRow from '../../components/Rows/StandingRow';
-import StandingsList from '../../components/Lists/StandingsList';
-import TeamStandingsList from '../../components/Lists/TeamStandingsList';
+import TeamStandingRow from '../../components/Rows/TeamStandingRow';
 
 export default function StandingsContainer() {
   const [data, setData] = useState([]);
@@ -44,9 +43,17 @@ export default function StandingsContainer() {
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Standings" />
-      <StandingsList data={data} />
+      <FlatList
+        style={{marginTop: 12}}
+        data={data}
+        renderItem={({item}) => <StandingRow data={item} />}
+      />
       <View style={styles.line} />
-      <TeamStandingsList data={teamData} />
+      <FlatList
+        style={{paddingBottom: 52, marginBottom: 10}}
+        data={teamData}
+        renderItem={({item}) => <TeamStandingRow data={item} />}
+      />
     </View>
   );
 }
@@ -58,6 +65,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   line: {
+    marginTop: 10,
+    marginBottom: 10,
     width: '100%',
     height: 1,
     borderColor: 'red',

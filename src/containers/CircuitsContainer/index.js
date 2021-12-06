@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import CircuitsList from '../../components/Lists/CircuitsList';
+import CircuitRow from '../../components/Rows/CircuitRow';
 
 export default function CircuitsContainer() {
   const [data, setData] = useState([]);
@@ -25,7 +25,11 @@ export default function CircuitsContainer() {
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Circuits" />
-      <CircuitsList data={data} />
+      <FlatList
+        style={{marginTop: 10, marginBottom: 40}}
+        data={data}
+        renderItem={({item}) => <CircuitRow data={item} />}
+      />
     </View>
   );
 }

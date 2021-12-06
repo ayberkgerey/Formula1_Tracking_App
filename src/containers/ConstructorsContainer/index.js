@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import ConstructorsList from '../../components/Lists/ConstructorsList';
+import ConstructorRow from '../../components/Rows/ConstructorRow';
 
 export default function ConstructorsContainer() {
   const [data, setData] = useState([]);
@@ -25,7 +25,11 @@ export default function ConstructorsContainer() {
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Constructors" />
-      <ConstructorsList data={data} />
+      <FlatList
+        style={{marginTop: '35%'}}
+        data={data}
+        renderItem={({item}) => <ConstructorRow data={item} />}
+      />
     </View>
   );
 }

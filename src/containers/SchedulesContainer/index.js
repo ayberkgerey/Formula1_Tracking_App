@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import PrimeTopBar from '../../components/Bars/PrimeTopBar';
-import SchedulesList from '../../components/Lists/SchedulesList';
+import ScheduleRow from '../../components/Rows/ScheduleRow';
 
 export default function SchedulesContainer() {
   const [data, setData] = useState([]);
@@ -25,7 +25,11 @@ export default function SchedulesContainer() {
   return (
     <View style={styles.container}>
       <PrimeTopBar header="Schedules" />
-      <SchedulesList data={data} />
+      <FlatList
+        style={{marginTop: 20, marginBottom: 30}}
+        data={data}
+        renderItem={({item}) => <ScheduleRow data={item} />}
+      />
     </View>
   );
 }
